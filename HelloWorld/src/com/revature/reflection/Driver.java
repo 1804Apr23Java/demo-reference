@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.revature.exception.MediaException;
 import com.revature.hello.Hawk;
 import com.revature.media.Book;
 import com.revature.media.Media;
@@ -27,9 +28,34 @@ public class Driver {
 		
 		//System.out.println(genericReflections(mediaList));
 		
-		Book b4 = (Book) objectReflections(b2);
+		//Book b4 = (Book) objectReflections(b2);
+		
+		System.out.println(filterByMediaType(mediaList,"Theatre"));
 		
 		
+	}
+	
+	public static List<Media> filterByMediaType(List<Media> mediaList, String mediaType){
+		List<Media> filteredList = new ArrayList<Media>();
+		try {
+			checkType(mediaType);
+		} catch (MediaException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}
+		for (Media item : mediaList) {
+			if(item.getClass().getName().equals("com.revature.media."+mediaType)) {
+				filteredList.add(item);
+			}
+		}
+		return filteredList;
+	}
+	
+	public static void checkType(String type) throws MediaException {
+		if (!type.equals("Book") && !type.equals("Movie")) {
+			throw new MediaException();
+		}
 	}
 	
 	//return list of Books in list of objects
