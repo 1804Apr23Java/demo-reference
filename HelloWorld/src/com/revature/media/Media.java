@@ -3,7 +3,7 @@ package com.revature.media;
 public abstract class Media {
 	
 	protected String title;
-	protected int yearPublished;
+	protected Integer yearPublished;
 	protected String genre;
 	
 	public String getTitle() {
@@ -12,7 +12,7 @@ public abstract class Media {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public int getYearPublished() {
+	public Integer getYearPublished() {
 		return yearPublished;
 	}
 	public void setYearPublished(int yearPublished) {
