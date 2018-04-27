@@ -1,7 +1,14 @@
 package com.revature.media;
 
-public class Movie extends Media implements Comparable<Movie> {
+import java.io.Serializable;
+
+public class Movie extends Media implements Comparable<Movie>, Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6871337386839137513L;
+
 	public Movie(String producer, String title, int yearPublished, String genre) {
 		super();
 		this.producer = producer;

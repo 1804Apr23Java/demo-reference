@@ -1,7 +1,13 @@
 package com.revature.media;
 
-public abstract class Media {
+import java.io.Serializable;
+
+public abstract class Media implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -986727312276802241L;
 	protected String title;
 	protected Integer yearPublished;
 	protected String genre;
