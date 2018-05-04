@@ -1,14 +1,12 @@
 package com.revature.main;
 
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.List;
 
+import com.revature.dao.BearDao;
+import com.revature.dao.BearDaoImpl;
 import com.revature.dao.CaveDao;
 import com.revature.dao.CaveDaoImpl;
 import com.revature.domain.Cave;
-import com.revature.util.ConnectionUtil;
 
 public class Driver {
 
@@ -36,7 +34,12 @@ public class Driver {
 		
 		Cave c = cd.getCaveById(2);
 		System.out.println(c.toString());
+		
+		BearDao bd = new BearDaoImpl();
+		
+		int amtFed = bd.feedBear(10, 1, 5);
 
+		System.out.println(amtFed);
 	}
 
 }
