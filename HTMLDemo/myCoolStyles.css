@@ -1,0 +1,24 @@
+div {
+    background-color: #85ffa3;
+}
+
+#hemingwayCat {
+    display:block;
+    padding:40px;
+    margin:40px;
+    border-style:solid;
+    border-color:#67732a;
+    border-width:10px;
+}
+
+.bobRoss {
+    background-image:url("https://media.npr.org/assets/img/2016/08/22/bobearly1_wide-f0fae2126b4eec1ce1ee0e4e61223fbd1756f617.jpg?s=1400");
+}
+
+.myCoolForm {
+    padding:40px;
+    margin:40px;
+    border-style:solid;
+    border-color:#67732a;
+}
+
