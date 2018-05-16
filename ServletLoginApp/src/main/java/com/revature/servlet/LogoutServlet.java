@@ -23,7 +23,6 @@ public class LogoutServlet extends HttpServlet {
 		HttpSession session = req.getSession(false);
 		if (session != null) {
 			session.invalidate();
-			session = null;
 		}
 		pw.println("you are successfully logged out");
 		pw.println("</div>");
