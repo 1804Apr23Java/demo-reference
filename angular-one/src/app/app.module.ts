@@ -1,12 +1,12 @@
-//Modules
+// Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 // Routing
-import { AppRoutingModule }  from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
-//Components
+// Components
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { MainComponent } from './components/main/main.component';
@@ -26,6 +26,12 @@ import { RoutingComponent } from './components/routing/routing.component';
 import { DiComponent } from './components/di/di.component';
 import { ServiceComponent } from './components/service/service.component';
 import { AngularJSComponent } from './components/angularjs/angularjs.component';
+import { PipeComponent } from './components/pipe/pipe.component';
+import { StructuralComponent } from './components/structural/structural.component';
+import { DatabindingComponent } from './components/databinding/databinding.component';
+import { HttpComponent } from './components/http/http.component';
+import { FlashcardComponent } from './components/structural/flashcard/flashcard.component';
+import { BearService } from './services/bear.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +53,12 @@ import { AngularJSComponent } from './components/angularjs/angularjs.component';
     RoutingComponent,
     DiComponent,
     ServiceComponent,
-    AngularJSComponent
+    AngularJSComponent,
+    PipeComponent,
+    StructuralComponent,
+    DatabindingComponent,
+    HttpComponent,
+    FlashcardComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +66,8 @@ import { AngularJSComponent } from './components/angularjs/angularjs.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [BearService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

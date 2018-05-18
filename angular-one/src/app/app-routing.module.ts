@@ -1,5 +1,5 @@
 // Modules
-import { NgModule }             from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Components
@@ -20,6 +20,10 @@ import { RoutingComponent } from './components/routing/routing.component';
 import { DiComponent } from './components/di/di.component';
 import { ServiceComponent } from './components/service/service.component';
 import { AngularJSComponent } from './components/angularjs/angularjs.component';
+import { StructuralComponent } from './components/structural/structural.component';
+import { PipeComponent } from './components/pipe/pipe.component';
+import { DatabindingComponent } from './components/databinding/databinding.component';
+import { HttpComponent } from './components/http/http.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -40,11 +44,15 @@ export const routes: Routes = [
   { path: 'di',  component: DiComponent },
   { path: 'service',  component: ServiceComponent },
   { path: 'angularjs',  component: AngularJSComponent },
+  { path: 'databinding', component: DatabindingComponent },
+  { path: 'pipe', component: PipeComponent },
+  { path: 'structural', component: StructuralComponent },
+  { path: 'http', component: HttpComponent },
   { path: '**', redirectTo: '/main' }
 ];
- 
+
 @NgModule({
   imports: [ RouterModule.forRoot(routes, {useHash: true}) ],
   exports: [ RouterModule ]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
