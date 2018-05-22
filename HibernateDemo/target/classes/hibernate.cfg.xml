@@ -4,14 +4,17 @@
 "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
-		<property name="hibernate.connection.username">BEARS</property>
-		<property name="hibernate.connection.password">p4ssw0rd</property>
-		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+		<property name="hibernate.connection.username"></property>
+		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.connection.url"></property>
 		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 		<!-- this can be useful during development but very noisy in the console -->
 		<property name="hibernate.show_sql">true</property>
 		<!-- choose whether to create db or update existing ddl -->
 		<!-- update by default -->
-		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<!-- locations of domain object mappings -->
+		<mapping class="com.revature.beans.Flashcard"></mapping>
+		<mapping class="com.revature.beans.Category"></mapping>
 	</session-factory>
 </hibernate-configuration>

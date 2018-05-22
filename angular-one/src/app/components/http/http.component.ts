@@ -19,7 +19,7 @@ export class HttpComponent implements OnInit {
   constructor(private bearService: BearService) { }
 
   public bear: Bear = new Bear(5, '', new Cave(1, '', 4), new BearType(1, ''), 200, new Date());
-  public bearList: Bear[];
+  public bears: Bear[];
 
   getBearInformation(): void {
     this.bearService.fetchBearInformation(this.bear.id)
@@ -32,10 +32,9 @@ export class HttpComponent implements OnInit {
   getBears(): void {
     this.bearService.fetchAllBears()
       .subscribe(
-        (bearList: BearList) => { this.bearList = bearList.bears; },
+        (bearList: BearList) => { this.bears = bearList.bears; },
         error => { console.log(error); }
       );
-    console.log(this.bearList);
   }
 
   // if we want to make the call when component is created

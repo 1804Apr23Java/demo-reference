@@ -59,8 +59,8 @@
             <button class="btn btn-success btn-center" (click)="getBears()">GET ALL BEARS</button>
           </div>
           <ul>
-              <li *ngFor="let bear of bearList">
-                {{ bear.name }}
+              <li *ngFor="let bear of bears">
+                {{bear.name}}, a {{bear.type}}
               </li>
             </ul>
         </div> 

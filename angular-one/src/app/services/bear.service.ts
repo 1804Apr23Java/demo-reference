@@ -24,9 +24,7 @@ export class BearService {
 
   // get all bears, for real, from our backend. using HttpClient, newer version of HttpModule
   public fetchAllBears(): Observable<BearList> {
-    const bears = this.httpClient.get<BearList>('http://localhost:8083/FrontControllerDemo/bear');
-    console.log(bears);
-    return bears;
+    return this.httpClient.get<BearList>('http://localhost:8083/FrontControllerDemo/bear');
   }
 
 }

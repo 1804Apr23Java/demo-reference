@@ -14,6 +14,9 @@ public class HibernateUtil {
 		
 		if (HibernateUtil.sessionFactory == null) {
 			Configuration c = new Configuration().configure(filename);
+			c.setProperty("hibernate.connection.username", System.getenv("BEARS_DB_USERNAME"));
+			c.setProperty("hibernate.connection.password", System.getenv("BEARS_DB_PASS"));
+			c.setProperty("hibernate.connection.url", System.getenv("BEARS_DB_URL"));
 			ServiceRegistry sr = new StandardServiceRegistryBuilder().applySettings(c.getProperties()).build();
 			HibernateUtil.sessionFactory = c.buildSessionFactory(sr);
 		}
