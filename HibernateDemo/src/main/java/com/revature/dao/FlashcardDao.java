@@ -11,6 +11,8 @@ public interface FlashcardDao {
 	public Flashcard getFlashcardById(int id);
 
 	public int addFlashcard(Flashcard f);
+	
+	public Flashcard persistFlashcard(Flashcard f);
 
 	public void updateFlashcard(Flashcard f);
 

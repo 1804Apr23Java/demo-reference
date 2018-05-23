@@ -45,7 +45,7 @@ public class Flashcard implements Serializable {
 	@Column(name="ANSWER")
 	private String answer;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="CATEGORY_ID")
 	private Category category;
 

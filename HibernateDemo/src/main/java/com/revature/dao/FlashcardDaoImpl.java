@@ -22,18 +22,32 @@ public class FlashcardDaoImpl implements FlashcardDao {
 
 	@Override
 	public Flashcard getFlashcardById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Session s = HibernateUtil.getSession();
+		//what if this was load????
+		Flashcard f = (Flashcard) s.get(Flashcard.class, id); //f is persistent
+		//System.out.println(f.getCategory());
+		s.close();
+		return f;
 	}
 
 	@Override
 	public int addFlashcard(Flashcard f) {
 		Session s = HibernateUtil.getSession();
-		Transaction tx = s.beginTransaction();
+		//Transaction tx = s.beginTransaction(); //spooky
 		int result = (int) s.save(f);
-		tx.commit();
+		//tx.commit();
 		s.close();
 		return result;
+	}
+	
+	public Flashcard persistFlashcard(Flashcard f) {
+		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
+		s.persist(f);
+		f.setAnswer("42");
+		tx.commit(); //if we leave this out, nothing will be persisted
+		s.close();
+		return f;
 	}
 
 	@Override
