@@ -5,7 +5,10 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.revature.beans.Animal;
+import com.revature.beans.Bat;
 import com.revature.beans.Category;
+import com.revature.beans.Cave;
 import com.revature.beans.Flashcard;
 import com.revature.dao.CategoryDao;
 import com.revature.dao.CategoryDaoImpl;
@@ -25,8 +28,26 @@ public class Driver {
 		
 		//saveVsPersist(fd);
 		
-		updateVsMerge();
+		//updateVsMerge();
+		
+		animalInit();
 	
+	}
+	
+	public static void animalInit() {
+		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
+		
+		Cave c = (Cave) s.get(Cave.class, 2);
+		
+		Animal a = new Animal("Mystery", c);
+		Bat bat1 = new Bat("Ernie", c, 42);
+		
+		s.persist(a);
+		s.persist(bat1);
+		
+		tx.commit();
+		s.close();
 	}
 	
 	public static void updateVsMerge() {
