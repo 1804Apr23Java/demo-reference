@@ -1,0 +1,6 @@
+com\revature\beans\Flashcard.class
+com\revature\dao\FlashcardDaoImpl.class
+com\revature\beans\Category.class
+com\revature\dao\FlashcardDao.class
+com\revature\servlet\FlashcardServlet.class
+com\revature\util\HibernateUtil.class

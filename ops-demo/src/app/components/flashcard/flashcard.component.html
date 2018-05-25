@@ -1,0 +1,23 @@
+<div>
+  <div class="panel-heading">
+    <span class="label label-default label-center">{{title}}</span>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+      <div class="list-group-item list-group-item-demo">
+          <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
+          <div class="list-group-item">
+            <strong>Now check out all the flashcards, using HttpClient: </strong>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-success btn-center" (click)="getCards()">GET ALL FLASHCARDS</button>
+          </div>
+          <ul>
+              <li *ngFor="let flashcard of cards">
+                {{flashcard.category.name}}: {{flashcard.question}} {{flashcard.answer}}
+              </li>
+            </ul>
+        </div> 
+    </div>
+  </div>
+</div>
