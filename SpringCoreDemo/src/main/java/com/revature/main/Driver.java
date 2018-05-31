@@ -13,7 +13,9 @@ public class Driver {
 		//allow us to access IoC container
 		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
 		
-		funWithBears(ac);
+		//funWithBears(ac);
+		
+		funWithCaves(ac);
 		
 		//close AC after you're done
 		((AbstractApplicationContext) ac).close();
@@ -36,6 +38,13 @@ public class Driver {
 		Bear b5 = (AutowiredBear) ac.getBean("autowiredBear");
 		b5.methodInBear();
 		
+		Bear b6 = (AutowiredBear) ac.getBean("autowiredBear");
+		b6.methodInBear();
 		
+	}
+	
+	public static void funWithCaves(ApplicationContext ac) {
+		Cave c = (Cave) ac.getBean("cave");
+		System.out.println(c.toString());
 	}
 }

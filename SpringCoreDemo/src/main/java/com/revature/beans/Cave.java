@@ -1,6 +1,9 @@
 package com.revature.beans;
 
-public class Cave {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Cave implements InitializingBean, DisposableBean {
 	
 	private int id;
 	private String name;
@@ -27,7 +30,22 @@ public class Cave {
 	}
 	public Cave() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("after properties set!");
+	}
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("DisposableBean's destroy()");
+	}
+	
+	public void defaultInit() {
+		System.out.println("default init method");
+	}
+	
+	public void defaultDestroy() {
+		System.out.println("default destroy method");
 	}
 
 }
