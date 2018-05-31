@@ -1,0 +1,6 @@
+2018-05-31 11:05:51 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2957fcb0: startup date [Thu May 31 11:05:51 EDT 2018]; root of context hierarchy
+2018-05-31 11:05:51 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2018-05-31 11:05:52 INFO  root:19 - void com.revature.service.PersonService.wakeUpAnimal()
+2018-05-31 11:05:52 INFO  root:19 - void com.revature.service.BearService.setIsWinter(Boolean)
+2018-05-31 11:05:52 ERROR root:24 - void com.revature.service.BearService.bearHibernates()
+2018-05-31 11:05:52 INFO  ClassPathXmlApplicationContext:960 - Closing org.springframework.context.support.ClassPathXmlApplicationContext@2957fcb0: startup date [Thu May 31 11:05:51 EDT 2018]; root of context hierarchy
