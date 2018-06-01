@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add a Flashcard!</title>
+<style>
+.formDiv {
+	background-color: #76e2a7;
+	text-align: center;
+	padding: 30px;
+	margin: 60px;
+}
+</style>
+</head>
+<body>
+	<div class="formDiv">
+		<form action="/SpringMVCDemo/flashcard/addWithForm" method="post">
+			<fieldset>
+				<legend>Question:</legend>
+				<input name="question" type="text" />
+			</fieldset>
+			<fieldset>
+				<legend>Answer:</legend>
+				<input name="answer" type="text" />
+			</fieldset>
+			<fieldset>
+				<legend>Category:</legend>
+				<input name="category" type="text" />
+			</fieldset>
+			<br> <input type="submit" value="add">
+		</form>
+	</div>
+
+
+</body>
+</html>

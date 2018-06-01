@@ -23,5 +23,8 @@
 			<value>.jsp</value> <!-- JSPs are one of MANY server-side templating tools -->
 		</property>
 	</bean>
-
+	
+	<!-- enable static resource retrieval -->
+	<mvc:resources mapping="/static/**" location="/WEB-INF/static/"></mvc:resources>
+	
 </beans>

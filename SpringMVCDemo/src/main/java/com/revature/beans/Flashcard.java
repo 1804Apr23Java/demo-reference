@@ -1,6 +1,13 @@
 package com.revature.beans;
 
-public class Flashcard {
+
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="FLASHCARD")
+public class Flashcard implements Serializable {
 
 	
 	public Flashcard(int id, String question, String answer, Category category) {
@@ -22,12 +29,25 @@ public class Flashcard {
 		super();
 	}
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1897553647260794654L;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="flashcardSequence")
+	@SequenceGenerator(allocationSize=1,name="flashcardSequence",sequenceName="SQ_FLASHCARD_PK")
+	@Column(name="FLASHCARD_ID")
 	private int id;
 	
+	@Column(name="QUESTION")
 	private String question;
 	
+	@Column(name="ANSWER")
 	private String answer;
 	
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	@JoinColumn(name="CATEGORY_ID")
 	private Category category;
 
 	public int getId() {
