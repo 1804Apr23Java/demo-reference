@@ -67,6 +67,7 @@ public class FlashcardController {
 		Flashcard f = new Flashcard(formParams.getFirst("question"),formParams.getFirst("answer"), new Category(0,formParams.getFirst("category")));
 		flashcardService.addFlashcard(f);
 		return "forward:/flashcard/all";
+		
 	}
 
 	// for rendering our simple Flashcard view via the View Resolver

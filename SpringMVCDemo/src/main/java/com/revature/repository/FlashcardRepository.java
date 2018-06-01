@@ -15,7 +15,7 @@ import com.revature.beans.Flashcard;
 
 @Repository(value="flashcardRepository")
 @Transactional
-@EnableTransactionManagement
+@EnableTransactionManagement //does same thing as <tx:annotation-driven>
 public class FlashcardRepository {
 	
 	@Autowired
