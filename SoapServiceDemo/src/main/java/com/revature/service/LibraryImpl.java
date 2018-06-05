@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.jws.WebService;
 
+import com.revature.exception.PropagandaException;
 import com.revature.model.Book;
 
 @WebService(endpointInterface="com.revature.service.Library")
@@ -20,7 +21,11 @@ public class LibraryImpl implements Library {
 	}
 
 	@Override
-	public String addBook(Book book) {
+	public String addBook(Book book) throws PropagandaException {
+		//not really doing anything in particular
+		if (book.getTitle().equals("1984")) {
+			throw new PropagandaException();
+		}
 		return "successfully added "+book.getTitle();
 	}
 
