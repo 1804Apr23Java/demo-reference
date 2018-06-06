@@ -1,0 +1,7 @@
+applications:
+  - name: ops-demo
+    memory: 700M
+    instances: 1
+    buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
+    command: node main.js
+    random-route: true

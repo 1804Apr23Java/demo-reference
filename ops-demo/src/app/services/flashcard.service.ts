@@ -15,9 +15,9 @@ export class FlashcardService {
   // inject Http object
   constructor(private httpClient: HttpClient) { }
 
-  // get all bears, for real, from our backend. using HttpClient, newer version of HttpModule
+  // get all cards, for real, from our backend. using HttpClient, newer version of HttpModule
   public fetchAllCards(): Observable<FlashcardList> {
-    return this.httpClient.get<FlashcardList>('http://ec2-34-217-90-162.us-west-2.compute.amazonaws.com:8090/OpsDemo/flashcard');
+    return this.httpClient.get<FlashcardList>('https://springbootdemo-reliable-gecko.cfapps.io/api/allFlashcards');
   }
 
 }
