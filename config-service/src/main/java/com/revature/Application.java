@@ -2,22 +2,14 @@ package com.revature;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
-import org.springframework.context.annotation.Bean;
-
-import com.revature.filter.SimplePreFilter;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
 @SpringBootApplication
-@EnableZuulProxy
+@EnableConfigServer
 public class Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
-	}
-	
-	@Bean
-	public SimplePreFilter simplePreFilter() {
-		return new SimplePreFilter();
 	}
 
 }

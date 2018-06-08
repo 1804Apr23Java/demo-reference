@@ -1,0 +1,4 @@
+kafka:
+  bootstrap-servers: ec2-35-182-41-35.ca-central-1.compute.amazonaws.com:9092
+  topic:
+    helloworld: helloworld.t

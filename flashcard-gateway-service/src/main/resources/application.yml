@@ -16,3 +16,8 @@ zuul:
     test:
       path: /neo/** 
       url: http://www.neopets.com/
+    flashcards-by-service-name:
+      path: /cards/**
+      serviceId: flashcard-app
+      
+      
